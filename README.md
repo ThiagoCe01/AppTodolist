@@ -4,4 +4,3 @@
 =======
 # AppTodolist
 App de anotações de tarefas diárias
->>>>>>> daf9ab2 (Initial commit)
