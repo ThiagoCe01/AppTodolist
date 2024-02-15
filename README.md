@@ -4,3 +4,6 @@
 =======
 # AppTodolist
 App de anotações de tarefas diárias
+## app com as seguintes funcionalidades
+### criar, salvar, finalizar e excluir.
+## Possui filtro de pesquisa
