@@ -1,38 +1,589 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+:root{
+
+  --backgroundOne: #111921;
+  --backgroundTwo: #1A2633;
+  --backgroundTree: #37526E;
+  --backgroundFour: #5782AD;
+
+  /*------------------------ */
+
+  --backgroundFive: #BF1F2C;
+  --backgroundSix: #E52535;
+  --backgroundSeven: #FF293B;
+
+/*------------------------------ */
+
+--TextColorOne: #fcfcfc;
+  --TextColorTwo: #e2dddd;
+  --TextColorTree: #adadad;
+  --TextColorFour: #7DF9FF;
+  --TextColorFive: #0BDA51;
+
+  
+}
+input[type=checkbox]{
+  margin: 5px;
+  border-radius: 1px;
+  border: none;
+  
+}
+
+body{
+  background: var(--backgroundOne);
+
+  font-family: 'Ubuntu', sans-serif;
+
+}
+@media screen and (min-width: 1024px) {
+  
+
+.App{
+  padding-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+.todo{
+  max-width: 70%;
+  height: auto;
+  background: var(--backgroundTwo);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5%;
+  border-radius: 10px;
+ 
+}
+.blockInput{
+  background: var(--backgroundOne);
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  color: var(--TextColorTree);
+  font-size: 1.1rem;
+}
+.Container-Input{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  margin: 15px;
+  transition: 0.3s;
+}
+
+.todo H1{
+  color: var(--backgroundTree);
+}
+.add-item-btn{
+
+  background: none;
+  color: var(--TextColorFour);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+} 
+input[type=text]{
+border-radius: 5px;
+width: 90%;
+height: 4vh;
+border: none;
+margin-right: 15px;
+}
+.profile{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom:5%;
+  padding-inline: 1%;
+  
+}.profile p{
+  color: var(--TextColorOne);
+}
+.profileSettings{
+  width: 10%;
+  display: flex;
+  justify-content: center;
+}
+.profileSettings img{
+  width: 50%;
+  border-radius: 100%;
+}
+.Container-Input button:hover{
+ 
+  transition: 0.3s;
+  color: var(--TextColorFive);
+}
+.filtered{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 0 5%;
+  color: var(--TextColorTree);
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+.filters{
+  display: flex;
+  width: 55%;
+  justify-content:space-between;
+  align-items: center;
+}
+.item-list{
+  width: 100%;
+  margin: 5%;
+  padding: 5%;
+  
+ 
+}
+
+.filter-btn {
+  min-width: 70px;
+  text-align: center;
+  padding: 1% 0;
+  border-radius: 3px;
+  background: none;
+  color: var(--TextColorTree);
+  cursor: pointer;
+  transition: 0.3s;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.filter-btn:hover{
+  color: var(--TextColorOne);
+  transition: 0.3s;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.item-list{
+  background: var(--backgroundOne);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.item-list li{
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  background: var(--backgroundTwo);
+  padding: 2%;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+.item-list input:checked{
+  background:var(--backgroundFive);
+  
+}
+.item-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  text-align: left;
+}
+.itemComplete{
+  width: 100%;
+  color: var(--TextColorTree);
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.TitleAndChek{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.delete-item-btn {
+  background: none;
+  color: var(--backgroundSeven);
+  font-size: 1.3rem;
+  cursor: pointer;
+
+}
+.item-date{
+  width: 100%;
+  font-size: 0.6rem;
+  padding-block: 1%;
+  color: var(--TextColorTree);
+  text-align: right;
+}
 }
 
-.App-link {
-  color: #61dafb;
-}
+@media screen and (max-width: 350px) {
+  
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .App{
+    
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
   }
-  to {
-    transform: rotate(360deg);
+  .todo{
+    max-width: 100%;
+    height: auto;
+    background: var(--backgroundTwo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5%;
+    border-radius: 10px;
+   
   }
-}
+  .blockInput{
+    background: var(--backgroundOne);
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    color: var(--TextColorTree);
+    font-size: 1.1rem;
+  }
+  .Container-Input{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    margin: 15px;
+    transition: 0.3s;
+  }
+  
+  .todo H1{
+    color: var(--backgroundTree);
+  }
+  .add-item-btn{
+  
+    background: none;
+    color: var(--TextColorFour);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+  } 
+  input[type=text]{
+  border-radius: 5px;
+  width: 90%;
+  height: 4vh;
+  border: none;
+  margin-right: 15px;
+  }
+  .profile{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:5%;
+    padding-inline: 1%;
+    
+  }.profile p{
+    color: var(--TextColorOne);
+  }
+  .profileSettings{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+  }
+  .profileSettings img{
+    width: 50%;
+    border-radius: 100%;
+  }
+  .Container-Input button:hover{
+   
+    transition: 0.3s;
+    color: var(--TextColorFive);
+  }
+  .filtered{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    padding: 2%;
+    margin-top: 2%;
+
+    color: var(--TextColorTree);
+    font-weight: 400;
+    font-size: 1.3rem;
+    flex-direction: column;
+  }
+  .filters{
+    display: flex;
+    width: 100%;
+    justify-content:space-between;
+    align-items: center;
+    
+  }
+  .filtered p{
+    margin-bottom: 5% ;
+  }
+ 
+  .item-list{
+    width: 100%;
+    margin: 5%;
+    padding: 5%;
+    
+   
+  }
+  
+  .filter-btn {
+    
+    text-align: center;
+    padding: 1% 0;
+    border-radius: 3px;
+    background: none;
+    color: var(--TextColorTree);
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    flex-direction: column;
+  }
+  .filter-btn:hover{
+    color: var(--TextColorOne);
+    transition: 0.3s;
+  }
+  .item-list{
+    background: var(--backgroundOne);
+  }
+  .item-list li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--backgroundTwo);
+    padding: 2%;
+    margin: 10px 0;
+    border-radius: 5px;
+  }
+  .item-list input:checked{
+    background:var(--backgroundFive);
+    
+  }
+  .item-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: left;
+  }
+  .itemComplete{
+    width: 100%;
+    color: var(--TextColorTree);
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .TitleAndChek{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .delete-item-btn {
+    background: none;
+    color: var(--backgroundSeven);
+    font-size: 1.3rem;
+    cursor: pointer;
+  
+  }
+  .item-date{
+    width: 100%;
+    font-size: 0.6rem;
+    padding-block: 1%;
+    color: var(--TextColorTree);
+    text-align: right;
+  }
+  }
+@media screen and (min-width: 351px) and (max-width:1023px){
+  
+
+  .App{
+    
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+  }
+  .todo{
+    max-width: 100%;
+    height: auto;
+    background: var(--backgroundTwo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5%;
+    border-radius: 10px;
+   
+  }
+  .blockInput{
+    background: var(--backgroundOne);
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    color: var(--TextColorTree);
+    font-size: 1.1rem;
+  }
+  .Container-Input{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    margin: 15px;
+    transition: 0.3s;
+  }
+  
+  .todo H1{
+    color: var(--backgroundTree);
+  }
+  .add-item-btn{
+  
+    background: none;
+    color: var(--TextColorFour);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+  } 
+  input[type=text]{
+  border-radius: 5px;
+  width: 90%;
+  height: 4vh;
+  border: none;
+  margin-right: 15px;
+  }
+  .profile{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:5%;
+    padding-inline: 1%;
+    
+  }.profile p{
+    color: var(--TextColorOne);
+  }
+  .profileSettings{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+  }
+  .profileSettings img{
+    width: 50%;
+    border-radius: 100%;
+  }
+  .Container-Input button:hover{
+   
+    transition: 0.3s;
+    color: var(--TextColorFive);
+  }
+  .filtered{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 0 5%;
+    color: var(--TextColorTree);
+    font-weight: 400;
+    font-size: 1.3rem;
+  }
+  .filters{
+    display: flex;
+    width: 75%;
+    justify-content:space-between;
+    align-items: center;
+    
+  }
+ 
+  .item-list{
+    width: 100%;
+    margin: 5%;
+    padding: 5%;
+    
+   
+  }
+  
+  .filter-btn {
+    min-width: 70px;
+    text-align: center;
+    padding: 1% 0;
+    border-radius: 3px;
+    background: none;
+    color: var(--TextColorTree);
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+  }
+  .filter-btn:hover{
+    color: var(--TextColorOne);
+    transition: 0.3s;
+  }
+  .item-list{
+    background: var(--backgroundOne);
+  }
+  .item-list li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--backgroundTwo);
+    padding: 2%;
+    margin: 10px 0;
+    border-radius: 5px;
+  }
+  .item-list input:checked{
+    background:var(--backgroundFive);
+    
+  }
+  .item-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: left;
+  }
+  .itemComplete{
+    width: 100%;
+    color: var(--TextColorTree);
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .TitleAndChek{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .delete-item-btn {
+    background: none;
+    color: var(--backgroundSeven);
+    font-size: 1.3rem;
+    cursor: pointer;
+  
+  }
+  .item-date{
+    width: 100%;
+    font-size: 0.6rem;
+    padding-block: 1%;
+    color: var(--TextColorTree);
+    text-align: right;
+  }
+  }
+
